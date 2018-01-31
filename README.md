@@ -14,6 +14,7 @@ Essa aplicação básica constitue de uma criação de webtokens JSON (JWT) para
 
 ## Arquitetura dos diretórios:
 
+```
 server.js : Arquivo principal
 |_ server
    |_ config
@@ -23,6 +24,7 @@ server.js : Arquivo principal
    |_ routes
       |_ api.js : Router principal da API que redireciona para outras routes e também verifica validação do token.
       |_ auth.js : Arquivo que manipula autenticação e criação de token (Login e Registro).
+```
 
 ## Dúvidas.
 
