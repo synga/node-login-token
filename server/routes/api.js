@@ -37,9 +37,20 @@ router.use((req, res, next) => {
           message: 'Falhou ao autenticar o token.'
         });
       } else {
-        // Se for válido vai para a próxima execução após o middleware
-        req.decoded = decoded;
-        next();
+        /**
+         * Se o token está dentro da validade, ou seja, a data de expiração dele é maior que a data atual,
+         * vai para a próxima execução após o middleware.
+         * decoded.iat - unix timestamp do tempo atual.
+         * decoded.exp - unix timestamp da expiração do token.
+         */
+        if (decoded.iat <= decoded.exp) {
+          next();
+        } else {
+          return res.status(403).send({
+            success: false,
+            message: "Token espirou."
+          });
+        }
       }
     });
   } else {
