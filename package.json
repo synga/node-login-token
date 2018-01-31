@@ -1,0 +1,14 @@
+{
+  "name": "node-login-token",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+  },
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^8.1.1",
+    "mongoose": "^5.0.1"
+  }
+}
